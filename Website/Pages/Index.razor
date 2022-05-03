@@ -1,0 +1,39 @@
+﻿@page "/"
+
+
+<h1>Pedro Miguel Gaspar Pedroso</h1>
+<br/>
+
+<p>
+I'm a software developer with a Computer Science License at <a href="https://www.isel.pt/en/">Instituto Superior de Engenharia de Lisboa (ISEL)</a>.<br/>
+Currently working at Intersurgical IT team.
+</p>
+<p>Find me at pedroso_pedro at hotmail.com</p>
+
+
+<a href="https://github.com/PPedroso">
+    <img class="icon" src="./media/Octocat.png">
+</a>
+<a href="https://www.codewars.com/users/PPedroso">
+    <img class="icon" src="./media/codewars.svg">
+</a>
+
+
+    <style>
+        .icon {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+
+@code {
+
+    List<Tuple<string, string>> links = new List<Tuple<string, string>>()
+{
+        new Tuple<string, string>("github","https://github.com/PPedroso"),
+        new Tuple<string, string>("codewars","https://www.codewars.com/users/PPedroso")
+    };
+
+}
+
+

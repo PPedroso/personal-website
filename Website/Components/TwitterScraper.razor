@@ -1,0 +1,31 @@
+﻿@page "/TwitterScraper"
+@using HtmlAgilityPack
+
+<label>Insert twitter handle to scrape!</label>
+<input type="text" value="@twitterHandle"/> 
+<input type="button" value="Scrape!" @onclick="Scrape"/>
+<div>
+    @htmlContent
+</div>
+
+@code {
+    /*
+    * 1- Validate handle
+    * 2- Perform GET request to get html content
+    * 3- Filter html content
+    * 4- Insert content in div
+    */
+
+    string htmlContent = "Content will appear here!";
+    string twitterHandle;
+
+    private void Scrape()
+    {
+        var httpClient = new HttpClient();
+        httpClient.GetStringAsync($"https://twitter.com/{twitterHandle}").ContinueWith((content) =>
+        {
+            htmlContent = content.Result;
+
+        });
+    } 
+}

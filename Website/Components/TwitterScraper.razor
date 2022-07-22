@@ -25,7 +25,6 @@
         httpClient.GetStringAsync($"https://twitter.com/{twitterHandle}").ContinueWith((content) =>
         {
             htmlContent = content.Result;
-
         });
     } 
 }
